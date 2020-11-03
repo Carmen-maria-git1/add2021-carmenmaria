@@ -1,21 +1,20 @@
-#**Samba con OpenSUSE y Windows**
+# Samba con OpenSUSE y Windows
 
-##**1. Servidor Samba (MV1)**
+## 1. Servidor Samba (MV1)
 
-  -  Configurar el servidor GNU/Linux.
+-  Configurar el servidor GNU/Linux.
 
-  >NOTA: He utilizado la MV de la prática de SSH pero se le ha instalado entorno gráfico usando los comandos:
+> NOTA: He utilizado la MV de la prática de SSH pero se le ha instalado entorno gráfico usando los comandos:
   **zypper install patterns-xfce-xfce** entrando como usuario root
   Después en **yast** servicios-destino- seleccionamos : Interfaz gráfica-salimos y ponemos reboot (reiniciar a lo bruto).
 
-  -  Nombre de equipo: serverXXg **server12g**.
+-  Nombre de equipo: serverXXg **server12g**.
 
-  -  Añadir en /etc/hosts los equipos clientXXg **cliente12g** y clientXXw **cliente12w**.
+-  Añadir en /etc/hosts los equipos clientXXg **cliente12g** y clientXXw **cliente12w**.
 
+![0](./images/Cap0.PNG)
 
-![0](./images/Cap0.png)
-
-##**1.2 Usuarios locales**
+## 1.2 Usuarios locales
 
 Vamos a GNU/Linux, y creamos los siguientes grupos y usuarios locales:
 
@@ -35,7 +34,7 @@ Vamos a GNU/Linux, y creamos los siguientes grupos y usuarios locales:
 
    poner a todos los usuarios **soldados**, **piratas**, **supersamba** y a **smbguest**.
 
-![2-1](./images/Cap2-1.png)
+![2-1](./images/Cap2-1.PNG)
 
 ##**1.3 Crear las carpetas para los futuros recursos compartidos**
 
