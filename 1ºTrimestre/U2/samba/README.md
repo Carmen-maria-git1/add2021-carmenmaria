@@ -36,7 +36,7 @@ Vamos a GNU/Linux, y creamos los siguientes grupos y usuarios locales:
 
 ![2-1](./images/Cap2-1.PNG)
 
-##**1.3 Crear las carpetas para los futuros recursos compartidos**
+## 1.3 Crear las carpetas para los futuros recursos compartidos
 
   -  Creamos la carpeta base para los recursos de red de Samba de la siguiente forma:
         **mkdir /srv/samba12**
@@ -55,7 +55,7 @@ Barco 	/srv/sambaXX/barco.d 	supersamba 	piratas 	770
 
 ![6](./images/Cap6.png)
 
-##**1.4 Configurar el servidor Samba**
+## 1.4 Configurar el servidor Samba
 
 
     -  **cp /etc/samba/smb.conf /etc/samba/smb.conf.bak**, hacer una copia de seguridad del fichero de configuración antes de modificarlo.
@@ -74,7 +74,7 @@ Barco 	/srv/sambaXX/barco.d 	supersamba 	piratas 	770
 
   ![7](./images/Cap7.png)
 
-##**1.5 Crear los recursos compartidos de red**
+## 1.5 Crear los recursos compartidos de red
 
 Vamos a configurar los recursos compartidos de red en el servidor. Podemos hacerlo modificando el fichero de configuración o por entorno gráfico con Yast.
 
@@ -107,7 +107,7 @@ Vamos a configurar los recursos compartidos de red en el servidor. Podemos hacer
 
   ![10](./images/Cap10.png)
 
-##**1.6 Usuarios Samba**
+## 1.6 Usuarios Samba
 
 Después de crear los usuarios en el sistema, hay que añadirlos a Samba.
 
@@ -120,9 +120,9 @@ Después de crear los usuarios en el sistema, hay que añadirlos a Samba.
 
   -  pdbedit -L, para comprobar la lista de usuarios Samba.
 
-  ![11](./images/Cap11.png)
+  ![11](./images/Cap11.png.PNG)
 
-##**1.7 Reiniciar**  
+## 1.7 Reiniciar  
 
 
   -  Ahora que hemos terminado con el servidor, hay que recargar los ficheros de configuración del servicio. Esto es, leer los cambios de configuración. Podemos hacerlo por Yast -> Servicios, o usar los comandos:
@@ -133,7 +133,7 @@ Después de crear los usuarios en el sistema, hay que añadirlos a Samba.
 
 ![10-1](./images/Cap10-1.png)
 
-#**2.Windows**
+# 2.Windows
 
 
     -Configurar el cliente Windows.
@@ -146,7 +146,7 @@ Después de crear los usuarios en el sistema, hay que añadirlos a Samba.
 
 ![12](./images/Cap12.png)
 
-##**2.1 Cliente Windows GUI**
+## 2.1 Cliente Windows GUI
 
 Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor Samba.
 
@@ -199,7 +199,7 @@ Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor
 
 ![20](./images/Cap20.png)  
 
-#**2.2 Cliente Windows comandos**
+# 2.2 Cliente Windows comandos
 
   -  Abrir una shell de windows.
 
@@ -246,7 +246,7 @@ Desde un cliente Windows vamos a acceder a los recursos compartidos del servidor
 
 ![27](./images/Cap27.png)
 
-#**3. Cliente GNU/Linux**
+# 3. Cliente GNU/Linux
 •	Configurar el cliente GNU/Linux.
 •	Usar nombre y la IP que hemos establecido al comienzo.
 •	Configurar el fichero /etc/hosts de la máquina.
@@ -304,7 +304,7 @@ o	**sudo lsof -i**, desde el servidor Samba.
 
 ![35](./images/Cap35.png)
 
-##**3.2 Cliente GNU/Linux comandos**
+## 3.2 Cliente GNU/Linux comandos
 
 Capturar imagenes de todo el proceso.
 
@@ -356,7 +356,7 @@ o	sudo lsof -i, desde el servidor Samba.
 
 ![42](./images/Cap42.png)
 
-##**3.3 Montaje automático**
+## 3.3 Montaje automático
 
 •	Hacer una instantánea de la MV antes de seguir. Por seguridad.
 
@@ -390,7 +390,7 @@ o	**//IP-servidor-samba/public /mnt/remotoXX/public cifs**
 
 •	Incluir contenido del fichero /etc/fstab en la entrega.
 
-#**4. Preguntas para resolver**
+# 4. Preguntas para resolver
 
 **Servicio y programas:**
 
