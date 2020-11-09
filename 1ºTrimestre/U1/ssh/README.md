@@ -42,11 +42,11 @@ Comprobar haciendo ping a ambos equipos.
 -Añadir en C:\Windows\System32\drivers\etc\hosts los equipos serverXXg y clientXXg.
 Comprobar haciendo ping a ambos equipos.
 
-![9](./images/Capw9.png)
+![9](./images/Capw9.PNG)
 
 >Nota: como teníamos que pasar las MV de casa a clase y biseversa puede producirse algún cambio para que pudiera haber conexión.
 
-![1](./images/Captura1.png)
+![1](./images/Captura1.PNG)
 
 ## 1.1.1-Crear los siguientes usuarios en server12g:
 
@@ -60,7 +60,7 @@ contraseña: passwd -----
     primer-apellido-del-alumno3   **Garcia3**
     primer-apellido-del-alumno4   **Fuentes4**
 
-![2](./images/Captura2.png)
+![2](./images/Captura2.PNG)
 
 
 
@@ -83,7 +83,7 @@ Instalar el servicio SSH en la máquina serverXXg. Por comandos o entorno gráfi
 
 >Nota: *ps -ef* muestra todos los programas que se están ejecutando en ese momento.
 
-![3](./images/Captura3.png)
+![3](./images/Captura3.PNG)
 
 -Para poner el servicio enable, si no lo estuviera.:
 *systemctl enable sshd*
@@ -104,7 +104,7 @@ y *netstat -n* hacen lo mismo ven si las conexiones están establecidas.
 
     Si esto falla, debemos comprobar en el servidor la configuración del cortafuegos.
 
-  ![4](./images/Captura4.png)
+  ![4](./images/Captura4.PNG)
 
   -Vamos a comprobar el funcionamiento de la conexión SSH desde cada cliente usando el usuario 1er-apellido-alumno1.
 
@@ -116,11 +116,11 @@ y *netstat -n* hacen lo mismo ven si las conexiones están establecidas.
 
  >Nota: El servidor crea un par de claves pública/privadas sin decir nada.
 
- ![5](./images/Captura5.png)
+ ![5](./images/Captura5.PNG)
 
 A partir de ahora cuando nos conectamos sólo nos pide la contraseña:
 
- ![6](./images/Captura6.png)
+ ![6](./images/Captura6.PNG)
 
 
   -Comprobar contenido del fichero $HOME/.ssh/known_hosts en el equipo cliente. OJO el prompt nos indica en qué equipo estamos.
@@ -129,7 +129,7 @@ A partir de ahora cuando nos conectamos sólo nos pide la contraseña:
 
   -Una vez llegados a este punto deben de funcionar correctamente las conexiones SSH desde el cliente. Comprobarlo.
 
- ![7](./images/Captura7.png)
+ ![7](./images/Captura7.PNG)
 
  ## 2.3 Primera conexión SSH desde cliente Windows
 
@@ -141,7 +141,7 @@ A partir de ahora cuando nos conectamos sólo nos pide la contraseña:
 
 -La siguiente vez que volvamos a usar PuTTY ya no debe aparecer el mensaje de advertencia porque hemos memorizado la identificación del servidor SSH. Comprobarlo
 
- ![8](./images/Captura8.png)
+ ![8](./images/Captura8.PNG)
 
 # 3. Cambiamos la identidad del servidor
 
@@ -149,9 +149,9 @@ A partir de ahora cuando nos conectamos sólo nos pide la contraseña:
 
 Los ficheros ssh_host key y ssh_host key.pub, son ficheros de clave pública/privada que identifican a nuestro servidor frente a nuestros clientes. Confirmar que existen el en /etc/ssh,:
 
-![8-](./images/Captura8-.png)
+![8-](./images/Captura8-.PNG)
 
-![9](./images/Captura9.png)
+![9](./images/Captura9.PNG)
 
 -Modificar el fichero de configuración SSH *(/etc/ssh/sshd_config)* para dejar una única línea: *HostKey /etc/ssh/ssh_host_rsa_key*.
 
@@ -170,7 +170,7 @@ Los ficheros ssh_host key y ssh_host key.pub, son ficheros de clave pública/pri
 
     -Como usuario root ejecutamos: ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key. ¡OJO! No poner password al certificado.
 
-    ![10](./images/Captura10.PNG)    
+![10](./images/Captura10.PNG)    
 
 
     -Reiniciar el servicio SSH: systemctl restart sshd.
@@ -178,7 +178,7 @@ Los ficheros ssh_host key y ssh_host key.pub, son ficheros de clave pública/pri
     -Comprobar que el servicio está en ejecución correctamente: systemctl status sshd
 
 
-    ![11](./images/Captura11.PNG)
+![11](./images/Captura11.PNG)
 
 
     ## 3.2 Comprobamos
@@ -201,8 +201,8 @@ Se ha generado nueva clave para acceder al servidor.
 -volvemos a ajecutar la conexión y nos permite acceder.
 
 ![9-](./images/Captura9-.PNG)
-![9x](./images/Captura9x.png)
-![9-x](./images/Captura9-x.png)
+![9x](./images/Captura9x.PNG)
+![9-x](./images/Captura9-x.PNG)
 
 
 ## 4. Personalización del prompt Bash
@@ -219,7 +219,7 @@ else
    PS1="\[$(pwd)\]\u@\h:\w>"
 fi
 
-![10](./images/Capt10.png)
+![10](./images/Capt10.PNG)
 
 -Además, crear el fichero el fichero /home/1er-apellido-alumno1/.alias, donde pondremos el siguiente contenido:
 
@@ -231,11 +231,11 @@ alias p='ping'
 alias v='vdir -cFl'
 alias s='ssh'
 
-![11](./images/Capt11.png)
+![11](./images/Capt11.PNG)
 
 -Comprobar funcionamiento de la conexión SSH desde cada cliente.
 
-![13](./images/Cap13.png)
+![13](./images/Cap13.PNG)
 
 ## 5. Autenticación mediante claves públicas
 
@@ -255,15 +255,15 @@ ssh-keygen -t rsa para generar un nuevo par de claves para el usuario en:
     /home/nombre-alumno/.ssh/id_rsa
     /home/nombre-alumno/.ssh/id_rsa.pub
 
-![14](./images/Cap14.png)
+![14](./images/Cap14.PNG)
 
 Ahora vamos a copiar la clave pública (id_rsa.pub), al fichero "authorized_keys" del usuario remoto 1er-apellido-alumno4 **Fuentes4** que está definido en el servidor.
 
-![15](./images/Cap15.png)
+![15](./images/Cap15.PNG)
 
 El modo recomendado es usando el comando ssh-copy-id. Ejemplo para copiar la clave pública del usuario actual al usuario remoto en la máquina remota: ssh-copy-id 1er-apellido-alumno4@serverXXg   **ssh-copy-id Fuentes4@server12g**
 
-![16](./images/Cap16.png)
+![16](./images/Cap16.PNG)
 
 Comprobar que ahora al acceder remotamente vía SSH
 
@@ -271,36 +271,36 @@ Comprobar que ahora al acceder remotamente vía SSH
     Desde clientXXw  **cliente12w**, SI se pide el password.
 
 
-  ![17](./images/Cap17.png)
+  ![17](./images/Cap17.PNG)
 
 ## 6. Uso de SSH como túnel para X
 
 
 -Instalar en el servidor una aplicación de entorno gráfico (APP1) que no esté en los clientes. Por ejemplo **Geany**. Si estuviera en el cliente entonces buscar otra aplicación o desinstalarla en el cliente.
 
-![18](./images/Cap18.png)
+![18](./images/Cap18.PNG)
 
 -Modificar servidor SSH para permitir la ejecución de aplicaciones gráficas, desde los clientes. Consultar fichero de configuración /etc/ssh/sshd_config (Opción X11Forwarding yes)
 
-  ![19](./images/Cap19.png)
-    ![20](./images/Cap20.png)
+  ![19](./images/Cap19.PNG)
+    ![20](./images/Cap20.PNG)
 
 -Reiniciar el servicio SSH para que se lean los cambios de configuración.
 
-  ![21](./images/Cap21.png)
+  ![21](./images/Cap21.PNG)
 
   Vamos a clientXXg.
 
   -zypper se APP1,comprobar que no está instalado el programa APP1  **geany**.
 
-  ![22](./images/Cap22.png)
+  ![22](./images/Cap22.PNG)
 
   Vamos a comprobar desde clientXXg, que funciona APP1(del servidor).
 
   ssh -X primer-apellido-alumno1@serverXXg, **ssh -X Hernandez1@serverXXg**  nos conectamos de forma remota al servidor, y ahora ejecutamos APP1 **geany** de forma remota.
       ¡OJO! El parámetro es -X en mayúsculas, no minúsculas.
 
-  ![23](./images/Cap23.png)
+  ![23](./images/Cap23.PNG)
 
 ## 7. Aplicaciones Windows nativas  
 
@@ -308,7 +308,7 @@ Podemos tener aplicaciones Windows nativas instaladas en ssh-server mediante el 
 
 -Instalar emulador Wine en el serverXXg.
 
-![24](./images/Cap24.png)
+![24](./images/Cap24.PNG)
 
 -Ahora podríamos instalar alguna aplicación (APP2) de Windows en el servidor SSH usando el emulador Wine. O podemos usar el Block de Notas que viene con Wine: wine notepad.
 
@@ -323,7 +323,7 @@ En la máquina cliente, hacemos una conexión remota con:
  **SSH -X Hernandez1@server12g**
 
  **wine notepad**
- ![-24](./images/Cap-24.png)
+ ![-24](./images/Cap-24.PNG)
 
 ## 8. Restricciones de uso
 
@@ -343,8 +343,8 @@ Capturar imagen de los siguientes pasos:
 
 -Consultar/modificar fichero de configuración del servidor SSH (*nano /etc/ssh/sshd_config*) para restringir el acceso a determinados usuarios. Consultar las opciones AllowUsers, DenyUsers (Más información en: *man sshd_config*)
 
-![26](./images/Cap26.png)
-![27](./images/Cap27.png)
+![26](./images/Cap26.PNG)
+![27](./images/Cap27.PNG)
 
 */usr/sbin/sshd -t; echo $?*, comprobar si la sintaxis del fichero de configuración del servicio SSH es correcta (Respuesta 0 => OK, 1 => ERROR).
 
@@ -352,7 +352,7 @@ Capturar imagen de los siguientes pasos:
 
 Comprobarlo la restricción al acceder desde los clientes.
 
-![28](./images/Cap28.png)
+![28](./images/Cap28.PNG)
 
 ## 8.2 Restricción sobre una aplicación
 
@@ -374,7 +374,7 @@ Vamos a crear una restricción de permisos sobre determinadas aplicaciones.
 
 **vdir /usr/bin/ | grep geany**
 
-![29](./images/Cap29.png)
+![29](./images/Cap29.PNG)
 
 -Poner al programa APP1 el grupo propietario a remoteapps.
 
@@ -382,13 +382,13 @@ Vamos a crear una restricción de permisos sobre determinadas aplicaciones.
 
 **chgrp remoteapps geany**
 
-![30](./images/Cap30.png)
+![30](./images/Cap30.PNG)
 
 -Poner los permisos del ejecutable de APP1 a 750. Para impedir que los usuarios que no pertenezcan al grupo puedan ejecutar el programa.
 
 **chmod 750 geany**
 
-![31](./images/Cap31.png)
+![31](./images/Cap31.PNG)
 
 -Comprobamos el funcionamiento en el servidor en local.
 
@@ -396,24 +396,24 @@ Vamos a crear una restricción de permisos sobre determinadas aplicaciones.
 
 **geany**
 
-![32](./images/Cap32.png)
+![32](./images/Cap32.PNG)
 
 -Comprobamos el funcionamiento desde el cliente en remoto (Recordar ssh -X ...).
 
 **ssh -X Fuentes4@192.168.8.117**
 
-![33](./images/Cap33.png)
+![33](./images/Cap33.PNG)
 
 ## 9. Servidor SSH en Windows
 
 --Configurar el servidor Windows con los siguientes valores:
 
-![7](./images/Capw7.png)
+![7](./images/Capw7.PNG)
 
 Añadir en
  C:\Windows\System32\drivers\etc\hosts
 
-![11](./images/Capw11.png)
+![11](./images/Capw11.PNG)
 
 -Instalar y configurar el servidor SSH en Windows.
 
@@ -422,9 +422,9 @@ Para instalarlo seguimos los siguientes pasos:
 
 -Descargar la última versión de OpenSSH-Win64.zip.
 
-![19](./images/Capw19.png)
+![19](./images/Capw19.PNG)
 
-![21](./images/Capw21.png)
+![21](./images/Capw21.PNG)
 
 -Descomprimir en **C:\Program files\OpenSSH**. En caso de haber descargado la versión de 32 bits (OpenSSH-Win32), extraer el contenido del ZIP en C:\Program files\OpenSSH (x86).
 
@@ -436,7 +436,7 @@ PS> Set-ExecutionPolicy –ExecutionPolicy Bypass
 PS> .\install-sshd.ps1
 
 -Documentar el proceso de instalación y configuración
-![20](./images/Capw20.png)
+![20](./images/Capw20.PNG)
 
 -Al terminar debe indicar que los servicios se han instalado de forma satisfactoria. Podemos comprobar que se han instalado los servicios con el siguiente comando:
 
